@@ -60,8 +60,7 @@ def get_temperature_from_box(box_id):
         # If anything goes wrong with one box, skip it — don't crash the whole API
         return None
     except Exception:  
-        return None
-    
+     return None
     return None
 
 
