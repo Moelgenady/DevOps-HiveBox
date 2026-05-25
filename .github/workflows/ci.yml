@@ -92,7 +92,11 @@ jobs:
 
             - name: Start container
               run: docker run -d --name hivebox-test -p 5000:5000 hivebox:0.0.2
-     
+            
+            
+            - name: Wait for container to be ready
+              run: sleep 3
+
             # Calling the endpoint from the container 
             - name: Call /version endpoint
               run: |
