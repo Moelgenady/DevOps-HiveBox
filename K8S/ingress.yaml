@@ -13,7 +13,6 @@ metadata:
   annotations:
     # Use Ingress-Nginx as the controller that we donwloaded
     nginx.ingress.kubernetes.io/rewrite-target: /
-
     # Redirect all HTTP traffic to HTTPS
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:

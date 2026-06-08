@@ -795,18 +795,10 @@ CD runs automatically after CI passes on `main`. It builds the Docker image and 
 ```yaml
 on:
   workflow_run:
-    workflows: [Continuous Integration]
+    workflows: ["Continuous Integration"]
     types: [completed]
-    branches: [main]
 ```
 
-CD wakes up when CI finishes. The job condition checks the result:
-
-```yaml
-if: ${{ github.event.workflow_run.conclusion == 'success' }}
-```
-
-If CI failed — CD job is skipped entirely. Nothing is pushed.
 
 ### The 3 image tags
 
