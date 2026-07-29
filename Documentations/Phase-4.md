@@ -620,6 +620,8 @@ Public certificate presented to clients
 #### Step 2: Create a Kubernetes TLS Secret
 Create a TLS Secret from the generated certificate and key:
 
+##### Note that the K8S-secret we will create is Name-Space Scoped, So it cannot be directly used by resources in another namespace, while we need to use it with Ingress so both of them must be in the same NS.
+
 ```bash
 kubectl create secret tls hivebox-tls --cert=tls.crt --key=tls.key -n hivebox
 ```
